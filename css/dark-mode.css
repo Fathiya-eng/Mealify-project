@@ -1,0 +1,101 @@
+/* ============================== Dark Mode ====================== */
+
+:root {
+    --bg-main: #ffffff;
+    --bg-section: #eeeeee;
+    --bg-card: #ffffff;
+    --text-main: #000000;
+    --text-button: white;
+    --text-muted: #7f7f90;
+    --accent: #ce1212;
+}
+
+body:has(#toggle-btn:checked) {
+    --bg-main: #1e1e1e;
+    --bg-section: #2a2a2a;
+    --bg-card: #121212;
+    --text-main: #ffffff;
+    --text-button: black;
+    --text-muted: #e4e1e1;
+    --accent: #eba337;
+}
+
+/*---------moon & sun mode---------*/
+.moon {
+    display: inline-block;
+}
+
+.sun {
+    display: none;
+}
+
+.dark-mode:has(#toggle-btn:checked) .moon {
+    display: none;
+}
+
+.dark-mode:has(#toggle-btn:checked) .sun {
+    display: inline-block;
+}
+
+
+/*--------- sections b-g ---------*/
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+}
+
+.home-sec,
+.gallery-sec {
+    background-color: var(--bg-section);
+}
+
+.chefs-sec,
+.contact-sec,
+.navbar {
+    background-color: var(--bg-main);
+}
+
+.chefs-sec .card,
+.contact-sec .card{
+    background-color: var(--bg-card);
+    color: var(--text-main);
+}
+
+.contact-sec form {
+    background-color: var(--bg-card);
+
+}
+
+/*---------sections text---------*/
+
+.navbar .navbar-brand,
+.home-text h1,
+.home-text p,
+.card-title h5,
+.card-text p,
+.card-text h3,
+.card-text span
+ {
+    color: var(--text-main);
+}
+
+.nav-link a,
+.sections-header h3{
+    color: var(--text-muted);
+}
+
+/*---------sections buttons---------*/
+.home-sec .table-button, 
+.contact-sec .btn-primary,
+.contact-sec .icon,
+.footer .btn-danger
+{
+    background-color: var(--accent);
+    color:var(--text-button);
+    border: none;
+}
+
+.navbar-brand::after,
+.sections-header span {
+    color: var(--accent);
+}
